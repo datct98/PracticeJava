@@ -29,6 +29,7 @@ public class WorkerService {
                 if(operator.equals("+")) salaryNew = worker.getSalary() + salaryChange;
                 else salaryNew= worker.getSalary() - salaryChange;
                 worker.setSalary(salaryNew);
+                break;
             }
         }
     }
