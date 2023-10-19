@@ -17,23 +17,29 @@ public class Menu {
             System.out.println("4- Display worker list");
             System.out.println("Please choose: ");
 
-            int choose = Integer.parseInt(scanner.nextLine());
-            switch (choose){
-                case 1:
-                    service.createWorker(scanner, workers);
-                    break;
-                case 2:
-                    service.updateSalary(scanner, workers, "+");
-                    break;
-                case 3:
-                    service.updateSalary(scanner, workers, "-");
-                    break;
-                case 4:
-                    System.out.println(workers);
-                    break;
-            }
+            menuSelect(scanner, workers, service);
             System.out.println("DO y want to continue?(Y/N)");
             chooseContinue = scanner.nextLine();
         }while (chooseContinue.equalsIgnoreCase("y"));
+    }
+
+    public void menuSelect(Scanner scanner, ArrayList<Worker> workers, WorkerService service){
+        int choose = Integer.parseInt(scanner.nextLine());
+        switch (choose){
+            case 1:
+                service.createWorker(scanner, workers);
+                break;
+            case 2:
+                service.updateSalary(scanner, workers, "+");
+                break;
+            case 3:
+                service.updateSalary(scanner, workers, "-");
+                break;
+            case 4:
+                System.out.println(workers);
+                break;
+            default:
+                System.out.println("Ngu vãi");
+        }
     }
 }
