@@ -17,4 +17,28 @@ public class StudentService {
         Student student = new Student(name, age, classify);
         students.add(student);
     }
+
+    public void updateHL14(Scanner scanner, ArrayList<Student> students){
+        System.out.println("nhập id học sinh muốn update: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Student student : students){
+            if(student.getId() == id){
+                System.out.println("Nhập học lực muốn thay đổi: ");
+                String classify = scanner.nextLine();
+                student.setClassify(classify);
+                break;
+            }
+        }
+    }
+
+    public void deletStudent(Scanner scanner, ArrayList<Student>students){
+        System.out.println("nhập id học sinh muốn update: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Student student: students){
+            if(student.getId() == id){
+                students.remove(student);
+                break;
+            }
+        }
+    }
 }

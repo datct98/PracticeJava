@@ -28,5 +28,9 @@ public class Main {
         classRoom.setStudents(students);
         techmaster.setClassRoom(classRoom);
         System.out.println(techmaster);
+
+        // Cập nhật học lực
+        studentService.updateHL14(scanner, students);
+
     }
 }
