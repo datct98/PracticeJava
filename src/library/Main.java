@@ -5,14 +5,25 @@ import library.entities.Person;
 import library.entities.TicketBook;
 import library.service.BookService;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        BookService bookService = new BookService();
+        List<Book> books = new ArrayList<>(Arrays.asList(new Book("Cuốn theo chiều gió", 4),
+                new Book("Cuốn theo chiều gió2", 4),
+                new Book( "Cuốn theo chiều gió3", 3)));
+
+        books.stream().forEach(e-> {
+            if(e.getName().equals(""))
+                System.out.println(e.getName());
+        });
+        /*BookService bookService = new BookService();
         Map<Integer, Book> bookMap = Map.of(
                 1, new Book("Cuốn theo chiều gió", 4),
                 2,new Book("Cuốn theo chiều gió2", 4),
@@ -45,6 +56,6 @@ public class Main {
             }
         } else {
 
-        }
+        }*/
     }
 }
